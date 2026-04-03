@@ -21,8 +21,8 @@ export default function Navbar() {
     <nav
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        scrolled
-          ? "bg-white/70 dark:bg-surface backdrop-blur-[24px] shadow-ambient"
+        scrolled || menuOpen
+          ? "bg-white/90 dark:bg-surface/95 backdrop-blur-[24px] shadow-ambient"
           : "bg-transparent"
       )}
     >
@@ -61,7 +61,7 @@ export default function Navbar() {
           <ThemeToggle />
           
           <button
-            className="md:hidden flex flex-col gap-1.5 p-1"
+            className="md:hidden flex flex-col gap-1.5 p-1 relative z-[60]"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -88,20 +88,24 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden glass border-t border-outline-variant/20 px-6 py-6 flex flex-col gap-4">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="font-headline text-sm font-medium text-secondary hover:text-primary transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-      )}
+      <div 
+        className={cn(
+          "md:hidden fixed inset-0 top-[72px] bg-white/95 dark:bg-surface/95 backdrop-blur-3xl px-6 py-10 flex flex-col gap-6 transition-all duration-300 z-40 transform h-[calc(100vh-72px)] overflow-y-auto",
+          menuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
+        )}
+      >
+        {NAV_LINKS.map((link, idx) => (
+          <Link
+            key={link.label}
+            href={link.href}
+            onClick={() => setMenuOpen(false)}
+            className="font-headline text-3xl font-bold uppercase tracking-tight text-on-surface hover:text-primary transition-colors border-b border-outline-variant/10 pb-4"
+            style={{ transitionDelay: `${menuOpen ? idx * 50 : 0}ms` }}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
     </nav>
   );
 }

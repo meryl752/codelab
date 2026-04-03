@@ -37,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable} overflow-x-hidden`} suppressHydrationWarning>
       <head>
         {/* Material Symbols for architectural icons */}
         <link
@@ -45,7 +45,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-surface font-body text-on-surface antialiased relative overflow-x-hidden">
+      <body className="bg-surface font-body text-on-surface antialiased relative overflow-x-hidden w-full max-w-full">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
