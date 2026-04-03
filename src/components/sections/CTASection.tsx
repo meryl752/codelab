@@ -21,14 +21,14 @@ export default function CTASection() {
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className="relative bg-[#0a192f] rounded-[3rem] p-12 md:py-16 md:px-20 overflow-hidden shadow-2xl border border-white/5">
+        <div className="relative bg-[#0a192f] rounded-[2rem] md:rounded-[3rem] p-8 md:py-16 md:px-20 overflow-hidden shadow-2xl border border-white/5">
           
           <div className="relative z-20 flex flex-col items-center text-center">
             <motion.h2 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-headline text-4xl md:text-6xl font-bold text-white tracking-tighter mb-6 leading-none"
+              className="font-headline text-3xl md:text-6xl font-bold text-white tracking-tighter mb-6 leading-none"
             >
               Prêt à transformer votre <br />
               <span className="text-primary italic">vision en réalité ?</span>
@@ -39,7 +39,7 @@ export default function CTASection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-white/60 text-lg md:text-xl font-light mb-10 max-w-xl leading-relaxed"
+              className="text-white/60 text-base md:text-xl font-light mb-10 max-w-xl leading-relaxed px-4 md:px-0"
             >
               Discutons de votre projet et définissons ensemble la stratégie qui propulsera votre entreprise vers le succès.
             </motion.p>

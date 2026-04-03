@@ -65,7 +65,7 @@ export default function AboutSection() {
           <span className="font-label text-sm tracking-widest text-primary mb-4 font-bold">
             04 / À PROPOS
           </span>
-          <h2 className="font-headline text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-on-surface">
+          <h2 className="font-headline text-3xl md:text-6xl font-bold tracking-tighter mb-4 text-on-surface">
             À propos de CodeLab
           </h2>
           <p className="text-secondary dark:text-secondary/60 text-xl md:text-2xl font-light leading-relaxed max-w-3xl opacity-90">
@@ -99,7 +99,7 @@ export default function AboutSection() {
                 <span className="font-label text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-4 block">
                   Genèse
                 </span>
-                <h3 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-on-surface leading-none">
+                <h3 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter text-on-surface leading-none">
                   Notre <br />
                   <span className="text-primary italic">Histoire</span>
                 </h3>

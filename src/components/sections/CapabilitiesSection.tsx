@@ -9,7 +9,7 @@ export default function CapabilitiesSection() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
         <div>
-          <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter mb-6">
+          <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter mb-6">
             Nos Compétences
           </h2>
           <p className="text-secondary font-body text-lg max-w-md font-light leading-relaxed">

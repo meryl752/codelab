@@ -38,7 +38,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h1 className="font-headline text-5xl md:text-7xl lg:text-7xl font-black tracking-tighter leading-[0.9] text-on-surface mb-10 uppercase">
+              <h1 className="font-headline text-4xl md:text-7xl lg:text-7xl font-black tracking-tighter leading-[0.9] text-on-surface mb-10 uppercase">
                 Transformez vos <br />
                 <span className="text-primary italic">idées en réalité</span> <br />
                 technologique
