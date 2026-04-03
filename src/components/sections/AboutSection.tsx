@@ -81,7 +81,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="md:col-span-12 bg-white dark:bg-surface-container-low border border-outline-variant/20 relative overflow-hidden p-8 md:p-20 group rounded-[2rem] shadow-ambient"
+            className="md:col-span-12 bg-white dark:bg-surface-container-low border border-outline-variant/10 relative overflow-hidden p-6 md:p-10 lg:p-12 group rounded-2xl shadow-ambient"
           >
             {/* Architectural Grid Background for Card */}
             <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" 
@@ -95,23 +95,23 @@ export default function AboutSection() {
 
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start lg:items-center">
               {/* Left Side: Accent & Title */}
-              <div className="lg:col-span-4 border-l-4 border-primary pl-6 lg:pl-8">
-                <span className="font-label text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-3 lg:mb-4 block">
+              <div className="lg:col-span-4 border-l-4 border-primary pl-6">
+                <span className="font-label text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-3 block">
                   Genèse
                 </span>
-                <h3 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter text-on-surface leading-none">
+                <h3 className="font-headline text-3xl md:text-4xl font-bold tracking-tighter text-on-surface leading-none">
                   Notre <br className="hidden lg:block" />
                   <span className="text-primary italic">Histoire</span>
                 </h3>
               </div>
 
               {/* Right Side: Content */}
-              <div className="lg:col-span-8 space-y-6 lg:space-y-8">
-                <p className="text-secondary dark:text-secondary/60 text-lg md:text-2xl font-light leading-relaxed">
+              <div className="lg:col-span-8 space-y-4 lg:space-y-6">
+                <p className="text-secondary dark:text-secondary/60 text-base md:text-xl font-light leading-relaxed">
                   Fondée en 2020, CodeLab est née de la vision audacieuse de démocratiser l&apos;accès aux technologies de pointe. Nous avons identifié le besoin crucial de combler le fossé entre l&apos;innovation technologique et son adoption pratique.
                 </p>
                 <div className="h-px w-16 lg:w-24 bg-primary/20" />
-                <p className="text-secondary dark:text-secondary/60 text-base md:text-xl leading-relaxed font-light italic opacity-80">
+                <p className="text-secondary dark:text-secondary/60 text-sm md:text-lg leading-relaxed font-light italic opacity-80">
                   Aujourd&apos;hui, nous combinons une expertise technique de haut niveau avec une pédagogie innovante pour transformer les défis les plus complexes en opportunités de croissance durable.
                 </p>
               </div>

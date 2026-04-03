@@ -5,10 +5,10 @@ import { Mail, Phone, MapPin, Send, Rocket } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="relative py-24 bg-surface transition-colors duration-300 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+    <section id="contact" className="relative py-16 bg-surface transition-colors duration-300 overflow-hidden">
+      <div className="max-w-5xl mx-auto px-6 md:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-outline-variant/20 shadow-xl overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-outline-variant/20 shadow-xl overflow-hidden rounded-2xl">
           
           {/* Left Column: Info - Dark Theme Accent */}
           <div className="lg:col-span-5 bg-[#0a192f] dark:bg-[#051120] text-white p-6 lg:p-10 flex flex-col justify-between relative overflow-hidden border-r border-white/5">
