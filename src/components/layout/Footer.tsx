@@ -112,11 +112,9 @@ export default function Footer() {
 
         <div className="pt-12 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="font-label text-[10px] uppercase tracking-widest text-secondary/30 font-bold">
-            © {new Date().getFullYear()} CodeLab Studio — Architecting Excellence
+            © {new Date().getFullYear()} CodeLab Studio
           </p>
           <div className="flex gap-8">
-            <Link href="#" className="text-secondary/30 hover:text-primary text-[10px] uppercase tracking-widest font-bold transition-colors">Confidentialité</Link>
-            <Link href="#" className="text-secondary/30 hover:text-primary text-[10px] uppercase tracking-widest font-bold transition-colors">Mentions Légales</Link>
           </div>
         </div>
       </div>
