@@ -38,8 +38,8 @@ export default function CaseStudiesSection() {
           </Link>
         </div>
 
-        {/* Static Blurred Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        {/* Desktop Grid */}
+        <div className="hidden md:grid grid-cols-3 gap-6 mb-16">
           {SELECTED_PROJECTS.map((project, index) => (
             <div
               key={project.title}
@@ -75,6 +75,47 @@ export default function CaseStudiesSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className="block md:hidden relative -mx-6 px-6 mb-16">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 scrollbar-hide">
+            {SELECTED_PROJECTS.map((project, index) => (
+              <div
+                key={`mobile-${project.title}`}
+                className="relative h-[450px] w-[85vw] max-w-[300px] flex-shrink-0 snap-center overflow-hidden border border-outline-variant/10 group shadow-lg"
+              >
+                {/* Image (Permanently Blurred & Grayscale) */}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="absolute inset-0 w-full h-full object-cover filter grayscale blur-[3px] scale-105 opacity-80 dark:opacity-60 transition-opacity duration-500"
+                />
+                
+                {/* Static Overlay Content (Always Visible) */}
+                <div className="absolute inset-0 bg-black/60 dark:bg-black/70 flex flex-col justify-end p-8 z-20">
+                  <div className="text-left">
+                      <span className="font-label text-[10px] uppercase tracking-widest text-primary font-black mb-3 block">
+                          {project.category}
+                      </span>
+                      <h3 className="font-headline text-2xl font-bold text-white mb-4">
+                          {project.title}
+                      </h3>
+                      <p className="text-white/80 dark:text-white/60 text-sm leading-relaxed font-light mb-2">
+                          {project.description}
+                      </p>
+                  </div>
+                </div>
+
+                {/* Minimalist Top Left Index (Always visible) */}
+                <div className="absolute top-6 left-6 text-white z-20">
+                  <span className="font-label text-[10px] uppercase tracking-[0.5em] font-black opacity-40">
+                    0{index + 1}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>

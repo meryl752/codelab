@@ -22,7 +22,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled || menuOpen
-          ? "bg-white/90 dark:bg-surface/95 backdrop-blur-[24px] shadow-ambient"
+          ? "bg-surface/95 backdrop-blur-[24px] shadow-ambient border-b border-outline-variant/10"
           : "bg-transparent"
       )}
     >

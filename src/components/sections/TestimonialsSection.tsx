@@ -45,8 +45,8 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Testimonials Desktop Grid */}
+        <div className="hidden md:grid grid-cols-3 gap-8">
           {TESTIMONIALS.map((t, i) => (
             <motion.div
               key={t.name}
@@ -70,12 +70,13 @@ export default function TestimonialsSection() {
               </div>
 
               <div className="flex items-center gap-4 pt-6 border-t border-outline-variant/20">
-                <div className="relative w-14 h-14 overflow-hidden rounded-none border-2 border-primary/20">
+                <div className="relative w-14 h-14 overflow-hidden rounded-none border-2 border-primary/20 bg-surface-container-highest">
                   <Image
                     src={t.image}
                     alt={t.name}
                     fill
                     className="object-cover"
+                    onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=' + t.name + '&background=004ced&color=fff' }}
                   />
                 </div>
                 <div>
@@ -89,6 +90,48 @@ export default function TestimonialsSection() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Testimonials Mobile Carousel */}
+        <div className="block md:hidden relative -mx-6 px-6">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 scrollbar-hide">
+            {TESTIMONIALS.map((t, i) => (
+              <div
+                key={`mobile-${t.name}`}
+                className="w-[85vw] max-w-[300px] flex-shrink-0 snap-center bg-surface-container-low border border-outline-variant/30 p-8 flex flex-col justify-between relative"
+              >
+                <div className="absolute top-6 right-6 text-primary opacity-10">
+                  <svg width="30" height="22" viewBox="0 0 40 30" fill="currentColor">
+                    <path d="M0 15V0H15V15H7.5C7.5 22.5 12.5 27.5 15 30H7.5C2.5 25 0 20 0 15ZM25 15V0H40V15H32.5C32.5 22.5 37.5 27.5 40 30H32.5C27.5 25 25 20 25 15Z" />
+                  </svg>
+                </div>
+                <div className="relative z-10">
+                  <p className="font-body text-base leading-relaxed text-secondary italic mb-8">
+                    "{t.content}"
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 pt-6 border-t border-outline-variant/20">
+                  <div className="relative w-12 h-12 overflow-hidden rounded-none border-2 border-primary/20 bg-surface-container-highest">
+                    <Image
+                      src={t.image}
+                      alt={t.name}
+                      fill
+                      className="object-cover"
+                      onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=' + t.name + '&background=004ced&color=fff' }}
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-headline font-bold text-sm tracking-tight text-on-surface">
+                      {t.name}
+                    </h4>
+                    <p className="text-primary text-[10px] font-label uppercase tracking-widest font-bold">
+                      {t.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -89,10 +89,7 @@ export default function ServicesSection() {
                         }}
                         style={{ pointerEvents: isActive ? "auto" : "none" }}
                       >
-                        {/* Big background number */}
-                        <span className="absolute -top-12 -left-6 md:-top-16 md:-left-10 font-headline text-7xl md:text-8xl font-black text-primary opacity-[0.08] select-none leading-none z-0">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
+                        {/* Big background number removed */}
 
                         <div className="relative h-full flex flex-col md:flex-row gap-8 items-center md:items-stretch">
                           {/* Main Info Card */}
@@ -188,10 +185,7 @@ export default function ServicesSection() {
                   <div className="absolute bottom-0 right-0 w-6 h-[2px] bg-[#1a1f4a] dark:bg-white/40" />
                   <div className="absolute bottom-0 right-0 w-[2px] h-6 bg-[#1a1f4a] dark:bg-white/40" />
 
-                  {/* Number watermark */}
-                  <span className="absolute -top-6 -left-4 font-headline text-8xl font-black text-primary opacity-[0.05] select-none pointer-events-none z-0">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                  {/* Number watermark removed */}
 
                   <div className="relative z-10 flex flex-col h-full justify-between">
                     <div>
@@ -242,15 +236,6 @@ export default function ServicesSection() {
           </button>
         </div>
         
-        {/* Pagination Dots */}
-        <div className="flex justify-center gap-2 mt-6">
-          {SERVICES.map((_, i) => (
-             <div 
-               key={`dot-${i}`}
-               className={`h-1 transition-all duration-300 ${mobileIndex === i ? 'w-8 bg-primary' : 'w-2 bg-outline-variant/30'}`} 
-             />
-          ))}
-        </div>
       </section>
 
     </div>

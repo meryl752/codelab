@@ -118,48 +118,88 @@ export default function RealisationsPage() {
       {/* Projects Grid */}
       <section className="py-20 px-6 md:px-8 bg-surface transition-colors duration-300">
         <div className="max-w-7xl mx-auto">
-          <motion.div 
-            layout
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6"
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project, index) => (
-                <motion.div 
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  onClick={() => setSelectedProject(project)}
-                  className="group relative aspect-[4/5] overflow-hidden bg-surface-container-low border border-outline-variant/10 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500"
-                >
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover grayscale blur-[1px] opacity-80 dark:opacity-60 group-hover:grayscale-0 group-hover:blur-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
-                  />
-                  
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end text-left">
-                    <div className="translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
+          {/* Desktop Grid */}
+          <div className="hidden md:block">
+            <motion.div 
+              layout
+              className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            >
+              <AnimatePresence mode="popLayout">
+                {filteredProjects.map((project, index) => (
+                  <motion.div 
+                    key={project.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    onClick={() => setSelectedProject(project)}
+                    className="group relative aspect-[4/5] overflow-hidden bg-surface-container-low border border-outline-variant/10 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500"
+                  >
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover grayscale blur-[1px] opacity-80 dark:opacity-60 group-hover:grayscale-0 group-hover:blur-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
+                    />
+                    
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-end text-left">
+                      <div className="translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
+                        <span className="font-label text-[10px] uppercase tracking-widest text-primary font-bold mb-1 block">
+                          {project.category}
+                        </span>
+                        <p className="font-headline text-lg font-bold text-white">
+                          {project.title}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-8 h-8 rounded-full bg-primary/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white">
+                            <Maximize2 className="w-4 h-4" />
+                        </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          </div>
+
+          {/* Mobile Carousel */}
+          <div className="block md:hidden relative -mx-6 px-6">
+            <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 scrollbar-hide">
+              <AnimatePresence>
+                {filteredProjects.map((project) => (
+                  <motion.div 
+                    key={project.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    onClick={() => setSelectedProject(project)}
+                    className="group relative aspect-[4/5] w-[80vw] max-w-[300px] flex-shrink-0 snap-center overflow-hidden bg-surface-container-low border border-outline-variant/10 cursor-pointer shadow-lg transition-all duration-500"
+                  >
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover opacity-90 dark:opacity-80"
+                    />
+                    
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-6 flex flex-col justify-end text-left">
                       <span className="font-label text-[10px] uppercase tracking-widest text-primary font-bold mb-1 block">
                         {project.category}
                       </span>
-                      <p className="font-headline text-lg font-bold text-white">
+                      <p className="font-headline text-xl font-bold text-white leading-tight">
                         {project.title}
                       </p>
-                    </div>
-                  </div>
-
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="w-8 h-8 rounded-full bg-primary/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white">
-                          <Maximize2 className="w-4 h-4" />
+                      <div className="mt-4 border border-white/20 px-4 py-2 w-max text-[10px] text-white uppercase tracking-widest backdrop-blur-sm">
+                        Découvrir
                       </div>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
       </section>
 

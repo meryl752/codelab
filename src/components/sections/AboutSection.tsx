@@ -93,25 +93,25 @@ export default function AboutSection() {
             
             {/* Decorative Background Text REMOVED */}
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start lg:items-center">
               {/* Left Side: Accent & Title */}
-              <div className="lg:col-span-4 border-l-4 border-primary pl-8">
-                <span className="font-label text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-4 block">
+              <div className="lg:col-span-4 border-l-4 border-primary pl-6 lg:pl-8">
+                <span className="font-label text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-3 lg:mb-4 block">
                   Genèse
                 </span>
                 <h3 className="font-headline text-3xl md:text-5xl font-bold tracking-tighter text-on-surface leading-none">
-                  Notre <br />
+                  Notre <br className="hidden lg:block" />
                   <span className="text-primary italic">Histoire</span>
                 </h3>
               </div>
 
               {/* Right Side: Content */}
-              <div className="lg:col-span-8 space-y-8">
-                <p className="text-secondary dark:text-secondary/60 text-xl md:text-2xl font-light leading-relaxed">
+              <div className="lg:col-span-8 space-y-6 lg:space-y-8">
+                <p className="text-secondary dark:text-secondary/60 text-lg md:text-2xl font-light leading-relaxed">
                   Fondée en 2020, CodeLab est née de la vision audacieuse de démocratiser l&apos;accès aux technologies de pointe. Nous avons identifié le besoin crucial de combler le fossé entre l&apos;innovation technologique et son adoption pratique.
                 </p>
-                <div className="h-px w-24 bg-primary/20" />
-                <p className="text-secondary dark:text-secondary/60 text-lg md:text-xl leading-relaxed font-light italic opacity-80">
+                <div className="h-px w-16 lg:w-24 bg-primary/20" />
+                <p className="text-secondary dark:text-secondary/60 text-base md:text-xl leading-relaxed font-light italic opacity-80">
                   Aujourd&apos;hui, nous combinons une expertise technique de haut niveau avec une pédagogie innovante pour transformer les défis les plus complexes en opportunités de croissance durable.
                 </p>
               </div>
@@ -119,8 +119,8 @@ export default function AboutSection() {
           </motion.div>
         </div>
 
-        {/* 4 Values Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-24">
+        {/* 4 Values Desktop Grid */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 mb-24">
           {VALUES.map((val, i) => (
             <motion.div
               key={val.title}
@@ -129,9 +129,9 @@ export default function AboutSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -10 }}
-              className="group relative p-12 bg-surface-container-low border border-outline-variant/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/30 rounded-none overflow-hidden"
+              className="group relative p-12 bg-surface-container-low border border-outline-variant/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/30 rounded-none overflow-hidden flex flex-col h-full"
             >
-              <div className="relative z-10 h-full flex flex-col">
+              <div className="relative z-10 flex flex-col h-full">
                 <span className="font-label text-[10px] uppercase tracking-[0.4em] text-primary/30 font-bold mb-8 block group-hover:text-primary transition-colors">
                   Pratique 0{i + 1}
                 </span>
@@ -141,12 +141,37 @@ export default function AboutSection() {
                 <p className="text-secondary dark:text-secondary/60 text-sm leading-relaxed font-light">
                   {val.description}
                 </p>
-                <div className="mt-12 mt-auto">
+                <div className="mt-12 lg:mt-auto pt-8">
                     <div className="w-8 h-0.5 bg-primary/10 group-hover:w-full group-hover:bg-primary/40 transition-all duration-700" />
                 </div>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* 4 Values Mobile Carousel */}
+        <div className="block md:hidden relative -mx-6 px-6 mb-24">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 scrollbar-hide">
+            {VALUES.map((val, i) => (
+              <div
+                key={`mobile-${val.title}`}
+                className="w-[85vw] max-w-[300px] flex-shrink-0 snap-center relative p-8 bg-surface-container-low border border-outline-variant/30 transition-all duration-500 overflow-hidden flex flex-col"
+              >
+                <span className="font-label text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-6 block">
+                  Pratique 0{i + 1}
+                </span>
+                <h4 className="font-headline text-2xl font-bold mb-4 tracking-tighter text-on-surface">
+                  {val.title}
+                </h4>
+                <p className="text-secondary dark:text-secondary/60 text-sm leading-relaxed font-light opacity-90">
+                  {val.description}
+                </p>
+                <div className="mt-8 pt-4">
+                    <div className="w-8 h-0.5 bg-primary/40" />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Tech Stack Cloud */}
