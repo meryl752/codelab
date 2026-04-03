@@ -100,31 +100,42 @@ export default function ServicesSection() {
                       <div className="relative h-full flex flex-col md:flex-row gap-8 items-center md:items-stretch">
                         {/* Main Info Card */}
                         <div
-                          className="relative z-10 w-full md:w-3/5 p-8 md:p-12 transition-all duration-500 shadow-ambient backdrop-blur-md border border-outline-variant/10 bg-surface-container-low/40 dark:bg-surface-container-high/20"
+                          className="relative z-10 w-full md:w-3/5 p-8 md:p-12 transition-all duration-500 shadow-ambient border border-outline-variant/10 bg-surface-container-high dark:bg-surface-container-low overflow-hidden group"
                           style={{ 
                             clipPath: BRUTE_SHAPES[i % BRUTE_SHAPES.length],
                           }}
                         >
+                          {/* ─── Corner Accents ─── */}
+                          <div className="absolute top-0 left-0 w-8 h-[2px] bg-[#1a1f4a] dark:bg-white z-20 transition-colors" />
+                          <div className="absolute top-0 left-0 w-[2px] h-8 bg-[#1a1f4a] dark:bg-white z-20 transition-colors" />
+                          <div className="absolute bottom-0 right-0 w-8 h-[2px] bg-[#1a1f4a] dark:bg-white z-20 transition-colors" />
+                          <div className="absolute bottom-0 right-0 w-[2px] h-8 bg-[#1a1f4a] dark:bg-white z-20 transition-colors" />
+
                           {/* Inner Radiant Glow */}
                           {isActive && (
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
                           )}
                           
-                          <h3 className="font-headline text-2xl md:text-3xl font-semibold mb-6 tracking-tighter text-on-surface">
+                          <h3 className="font-headline text-2xl md:text-4xl font-bold mb-6 tracking-tighter text-on-surface">
                             {svc.title}
                           </h3>
-                          <p className="text-secondary dark:text-secondary/60 text-base md:text-lg leading-relaxed max-w-lg">
+                          <p className="text-secondary dark:text-secondary/70 text-base md:text-xl leading-relaxed max-w-lg">
                             {svc.description}
                           </p>
                         </div>
 
                         {/* Features Box */}
                         <motion.div 
-                          className="w-full md:w-2/5 p-8 border-2 border-dashed border-primary/20 bg-surface-container-lowest/40 dark:bg-surface-container-low/40 shadow-ambient backdrop-blur-sm"
+                          className="relative w-full md:w-2/5 p-8 border border-dashed border-primary/20 bg-surface-container-lowest dark:bg-surface-container-lowest shadow-ambient transition-colors overflow-hidden"
                           initial={false}
                           animate={isActive ? { x: 20, y: 30, opacity: 1 } : { x: 0, y: 0, opacity: 0 }}
                           transition={{ delay: 0.2, duration: 0.5 }}
                         >
+                          {/* ─── Corner Accents ─── */}
+                          <div className="absolute top-0 right-0 w-8 h-[2px] bg-[#1a1f4a] dark:bg-white z-20 transition-colors" />
+                          <div className="absolute top-0 right-0 w-[2px] h-8 bg-[#1a1f4a] dark:bg-white z-20 transition-colors" />
+                          <div className="absolute bottom-0 left-0 w-8 h-[2px] bg-[#1a1f4a] dark:bg-white z-20 transition-colors" />
+                          <div className="absolute bottom-0 left-0 w-[2px] h-8 bg-[#1a1f4a] dark:bg-white z-20 transition-colors" />
                           <ul className="space-y-4">
                             {svc.features.map((feature, idx) => (
                               <li key={idx} className="flex items-start gap-3">

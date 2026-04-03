@@ -22,7 +22,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/70 dark:bg-surface/70 backdrop-blur-[24px] shadow-ambient"
+          ? "bg-white/70 dark:bg-surface backdrop-blur-[24px] shadow-ambient"
           : "bg-transparent"
       )}
     >

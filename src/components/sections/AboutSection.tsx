@@ -75,26 +75,49 @@ export default function AboutSection() {
 
         {/* Top Content: History Only (Vision moved to Hero) */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
-          {/* History */}
+          {/* History Section: Modernized Architectural Layout */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="md:col-span-12 bg-surface-container-low border border-outline-variant/30 relative overflow-hidden group hover:bg-surface-container-high transition-all duration-700 p-10 md:p-16"
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="md:col-span-12 bg-white dark:bg-surface-container-low border border-outline-variant/20 relative overflow-hidden p-8 md:p-20 group rounded-[2rem] shadow-ambient"
           >
-            <div className="absolute top-0 left-0 w-1.5 h-full bg-primary/20" />
-            <div className="max-w-4xl">
-              <h3 className="font-headline text-3xl md:text-4xl font-bold mb-10 flex items-center gap-6 text-on-surface">
-                Notre Histoire
-                <div className="h-0.5 w-16 bg-primary/40" />
-              </h3>
-              <p className="text-secondary dark:text-secondary/60 text-xl md:text-2xl font-light leading-relaxed mb-8">
-                Fondée en 2020, CodeLab est née de la vision audacieuse de démocratiser l&apos;accès aux technologies de pointe. Dans un monde en perpétuelle évolution numérique, nous avons identifié le besoin crucial de combler le fossé entre l&apos;innovation technologique et son adoption pratique.
-              </p>
-              <p className="text-secondary dark:text-secondary/60 text-lg md:text-xl leading-relaxed font-light">
-                Aujourd&apos;hui, nous combinons une expertise technique de haut niveau avec une pédagogie innovante pour transformer les défis les plus complexes en opportunités de croissance durable pour nos clients.
-              </p>
+            {/* Architectural Grid Background for Card */}
+            <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" 
+                 style={{ 
+                   backgroundImage: 'linear-gradient(var(--on-surface) 1px, transparent 1px), linear-gradient(90deg, var(--on-surface) 1px, transparent 1px)', 
+                   backgroundSize: '30px 30px' 
+                 }} 
+            />
+            
+            {/* Decorative Background Text */}
+            <div className="absolute -bottom-10 -right-10 font-headline text-[12rem] md:text-[20rem] font-black text-primary/[0.03] dark:text-primary/[0.05] select-none pointer-events-none leading-none uppercase">
+              Story
+            </div>
+
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              {/* Left Side: Accent & Title */}
+              <div className="lg:col-span-4 border-l-4 border-primary pl-8">
+                <span className="font-label text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-4 block">
+                  Genèse
+                </span>
+                <h3 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-on-surface leading-none">
+                  Notre <br />
+                  <span className="text-primary italic">Histoire</span>
+                </h3>
+              </div>
+
+              {/* Right Side: Content */}
+              <div className="lg:col-span-8 space-y-8">
+                <p className="text-secondary dark:text-secondary/60 text-xl md:text-2xl font-light leading-relaxed">
+                  Fondée en 2020, CodeLab est née de la vision audacieuse de démocratiser l&apos;accès aux technologies de pointe. Nous avons identifié le besoin crucial de combler le fossé entre l&apos;innovation technologique et son adoption pratique.
+                </p>
+                <div className="h-px w-24 bg-primary/20" />
+                <p className="text-secondary dark:text-secondary/60 text-lg md:text-xl leading-relaxed font-light italic opacity-80">
+                  Aujourd&apos;hui, nous combinons une expertise technique de haut niveau avec une pédagogie innovante pour transformer les défis les plus complexes en opportunités de croissance durable.
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>

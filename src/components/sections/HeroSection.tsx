@@ -58,7 +58,7 @@ export default function HeroSection() {
             className="relative"
           >
             {/* The "Flat" Vision Card with Grid */}
-            <div className="bg-white/80 dark:bg-surface-container-low/80 backdrop-blur-sm rounded-[3rem] p-10 md:p-16 relative z-20 overflow-hidden border border-outline-variant/20 shadow-xl shadow-primary/5">
+            <div className="bg-white/90 dark:bg-surface-container-low rounded-[3rem] p-10 md:p-16 relative z-20 overflow-hidden border border-outline-variant/10 shadow-xl shadow-primary/5 transition-colors group">
               
               {/* Vision Card Grid Pattern (Traits Paper Look) */}
               <div className="absolute inset-0 opacity-[0.06] pointer-events-none" 
