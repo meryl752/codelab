@@ -91,10 +91,7 @@ export default function AboutSection() {
                  }} 
             />
             
-            {/* Decorative Background Text */}
-            <div className="absolute -bottom-10 -right-10 font-headline text-[12rem] md:text-[20rem] font-black text-primary/[0.03] dark:text-primary/[0.05] select-none pointer-events-none leading-none uppercase">
-              Story
-            </div>
+            {/* Decorative Background Text REMOVED */}
 
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Left Side: Accent & Title */}
@@ -205,7 +202,7 @@ export default function AboutSection() {
                     <img 
                       src={`https://img.logo.dev/${tech.domain}?token=${API_TOKEN}`} 
                       alt={`${tech.name} logo`} 
-                      className="w-7 h-7 object-contain dark:invert-[0.1] dark:grayscale"
+                      className="w-7 h-7 object-contain"
                       loading="lazy"
                     />
                     <span className="tracking-tight">{tech.name}</span>
@@ -231,7 +228,7 @@ export default function AboutSection() {
                     <img 
                       src={`https://img.logo.dev/${tech.domain}?token=${API_TOKEN}`} 
                       alt={`${tech.name} logo`} 
-                      className="w-7 h-7 object-contain dark:invert-[0.1] dark:grayscale"
+                      className="w-7 h-7 object-contain"
                       loading="lazy"
                     />
                     <span className="tracking-tight">{tech.name}</span>

@@ -4,10 +4,10 @@ import { ArrowUpRight } from "lucide-react";
 export default function CTASection() {
   return (
     <section id="contact" className="px-6 md:px-8 max-w-7xl mx-auto pb-32">
-      <div className="bg-inverse-surface rounded-3xl p-12 md:p-24 relative overflow-hidden">
+      <div className="bg-[#0a192f] rounded-3xl p-12 md:p-24 relative overflow-hidden shadow-2xl">
         {/* Ambient glows */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-tertiary/10 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/30 rounded-full blur-[120px] pointer-events-none opacity-50" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-tertiary/20 rounded-full blur-[150px] pointer-events-none opacity-30" />
 
         {/* Content */}
         <div className="relative z-10 text-center max-w-3xl mx-auto">
