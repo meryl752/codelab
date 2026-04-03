@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design System: CSS Custom Properties ─── */
+:root {
+  --primary: #004ced;
+  --on-primary: #ffffff;
+  --on-primary-container: #0047e0;
+  --tertiary: #006875;
+  --surface: #f8f9fa;
+  --surface-container-low: #f3f4f5;
+  --surface-container-lowest: #ffffff;
+  --surface-container-high: #e7e8e9;
+  --surface-container-highest: #e1e3e4;
+  --inverse-surface: #2e3132;
+  --on-surface: #191c1d;
+  --secondary: #5f5e5e;
+  --outline-variant: #bac9cc;
+}
+
+.dark {
+  --primary: #58a6ff;
+  --on-primary: #000000;
+  --on-primary-container: #58a6ff;
+  --tertiary: #a5d6ff;
+  --surface: #101432; /* Even deeper indigo for contrast */
+  --surface-container-low: #1a1f4a;
+  --surface-container-lowest: #0d102b;
+  --surface-container-high: #242b66;
+  --surface-container-highest: #2e3880;
+  --inverse-surface: #f1f5f9;
+  --on-surface: #ffffff;
+  --secondary: #a5b4fc;
+  --outline-variant: rgba(255, 255, 255, 0.1);
+}
+
+/* ─── Base Styles ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--on-surface);
+  font-family: "Manrope", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ─── Typography Utilities ─── */
+@layer utilities {
+  .font-display {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+
+  .tracking-editorial {
+    letter-spacing: -0.02em;
+  }
+
+  .tracking-label {
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── "No-Line" rule: tonal transitions only ─── */
+  .section-transition {
+    border: none !important;
+    outline: none !important;
+  }
+
+  /* ─── Glassmorphism ─── */
+  .glass {
+    background: rgba(248, 249, 250, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
+  /* ─── Gradient Primary Button ─── */
+  .btn-primary {
+    background: linear-gradient(135deg, #004ced, #0047e0);
+    color: #ffffff;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 20px 40px rgba(0, 76, 237, 0.2);
+  }
+
+  .btn-secondary {
+    background-color: #e7e8e9;
+    color: #191c1d;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    border: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: #e1e3e4;
+  }
+
+  /* ─── Editorial Grid ─── */
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  /* ─── Ghost Border (accessibility fallback) ─── */
+  .ghost-border {
+    outline: 1px solid rgba(186, 201, 204, 0.15);
+  }
+
+  /* ─── Architectural Card ─── */
+  .card-architectural {
+    background-color: #f3f4f5;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .card-architectural:hover {
+    background-color: #e7e8e9;
+    transform: translateY(-2px);
+  }
+}
+
+/* ─── Scroll-linked fade animations ─── */
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}
+
+/* ─── Material Symbols ─── */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+}
