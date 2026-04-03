@@ -10,6 +10,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import CTASection from "@/components/sections/CTASection";
+import SectionDivider from "@/components/ui/SectionDivider";
 
 export default function Home() {
   return (
@@ -17,14 +18,30 @@ export default function Home() {
       <Navbar />
       <main className="pt-20">
         <HeroSection />
+        
+        <SectionDivider type={1} />
         <StatsSection />
+        
         <TrustedClients />
+        
+        <SectionDivider type={2} />
         <CapabilitiesSection />
+        
+        <SectionDivider type={1} />
         <ServicesSection />
+        
+        <SectionDivider type={3} />
         <CaseStudiesSection />
+        
+        <SectionDivider type={2} />
         <AboutSection />
+        
+        <SectionDivider type={1} />
         <TestimonialsSection />
+        
         <ContactSection />
+        
+        <SectionDivider type={3} />
         <CTASection />
       </main>
       <Footer />

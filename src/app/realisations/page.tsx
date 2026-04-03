@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import { ArrowLeft, X, Maximize2, Monitor, Smartphone, Cpu } from "lucide-react";
 import Link from "next/link";
 import ALL_PROJECTS_RAW from "../../../public/data/projects.json";
+import SectionDivider from "@/components/ui/SectionDivider";
 
 interface Project {
   id: string;
@@ -113,6 +114,8 @@ export default function RealisationsPage() {
           </div>
         </div>
       </section>
+
+      <SectionDivider type={1} />
 
       {/* Projects Grid */}
       <section className="py-20 px-6 md:px-8 bg-surface transition-colors duration-300">
