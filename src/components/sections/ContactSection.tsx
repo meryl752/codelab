@@ -11,7 +11,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-outline-variant/20 shadow-xl overflow-hidden">
           
           {/* Left Column: Info - Dark Theme Accent */}
-          <div className="lg:col-span-5 bg-[#0a192f] dark:bg-[#051120] text-white p-8 md:p-12 flex flex-col justify-between relative overflow-hidden min-h-[500px] border-r border-white/5">
+          <div className="lg:col-span-5 bg-[#0a192f] dark:bg-[#051120] text-white p-6 lg:p-10 flex flex-col justify-between relative overflow-hidden border-r border-white/5">
             {/* Background Decoration */}
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             
@@ -26,7 +26,7 @@ export default function ContactSection() {
                 Discutons de vos besoins et trouvons ensemble la solution parfaite pour votre entreprise.
               </p>
 
-              <div className="space-y-6 mb-12">
+              <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-4 group">
                   <div className="w-10 h-10 flex items-center justify-center border border-white/10 group-hover:bg-primary group-hover:border-primary transition-all duration-300">
                     <Mail className="w-4 h-4" />
@@ -71,8 +71,8 @@ export default function ContactSection() {
           </div>
 
           {/* Right Column: Form */}
-          <div className="lg:col-span-7 bg-surface-container-low p-8 md:p-12 flex flex-col justify-center transition-colors">
-            <form className="space-y-6">
+          <div className="lg:col-span-7 bg-surface-container-low p-6 lg:p-10 flex flex-col justify-center transition-colors">
+            <form className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-1.5">
                   <label htmlFor="name" className="font-label text-[10px] uppercase tracking-widest text-secondary dark:text-secondary/60">Nom complet *</label>
@@ -110,7 +110,7 @@ export default function ContactSection() {
                 <label htmlFor="message" className="font-label text-[10px] uppercase tracking-widest text-secondary dark:text-secondary/60">Message *</label>
                 <textarea 
                   id="message" 
-                  rows={3} 
+                  rows={2} 
                   placeholder="Décrivez votre projet ou vos besoins..." 
                   className="w-full bg-transparent border-b border-outline-variant/40 py-3 focus:border-primary focus:outline-none text-on-surface transition-colors resize-none text-sm placeholder:text-secondary/30"
                   required
