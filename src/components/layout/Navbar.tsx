@@ -22,7 +22,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled || menuOpen
-          ? "bg-surface/95 dark:bg-[#0a192f]/95 backdrop-blur-[24px] shadow-ambient border-b border-outline-variant/10"
+          ? "bg-surface/95 dark:bg-black/95 backdrop-blur-[24px] shadow-ambient border-b border-outline-variant/10"
           : "bg-transparent"
       )}
     >
@@ -90,7 +90,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div 
         className={cn(
-          "md:hidden fixed inset-0 top-[72px] bg-white/95 dark:bg-[#0a192f]/98 backdrop-blur-3xl px-6 py-10 flex flex-col gap-6 transition-all duration-300 z-40 transform h-[calc(100vh-72px)] overflow-y-auto",
+          "md:hidden fixed inset-0 top-[72px] bg-white/95 dark:bg-black/95 backdrop-blur-3xl px-6 py-10 flex flex-col gap-6 transition-all duration-300 z-40 transform h-[calc(100vh-72px)] overflow-y-auto",
           menuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         )}
       >
