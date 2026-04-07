@@ -18,7 +18,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} — Architecting the Digital Frontier`,
+  title: `${SITE_NAME} — Ingénierie logicielle et formation`,
   description: SITE_DESCRIPTION,
   openGraph: {
     title: `${SITE_NAME} Studio`,
